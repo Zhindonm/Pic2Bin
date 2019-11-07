@@ -1,3 +1,3 @@
-# base64
+# Pic2Bin
 
-A program capable of decoding base64 n-times
+A program capable of representing a black and white image in binary octets
