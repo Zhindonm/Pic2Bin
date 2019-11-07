@@ -18,39 +18,25 @@ def is_white(pixel):
 
     return True
 
-def is_green(pixel):
-    if pixel == (178,219,55):
-        print 't'
-        return True
-    return False
 
 
 
 binary = ''
 
 count = 1
-print pix[0][0]
 
 for i in range(len(pix)):
     for j in range(len(pix[i])):
 
-        # if is_black(pix[i][j]):
-        #     binary = binary + '0'
-        # if is_white(pix[i][j]):
-        #     binary = binary + '1'
+        if is_black(pix[i][j]):
+            binary = binary + '0'
+        if is_white(pix[i][j]):
+            binary = binary + '1'
         
         
-        # if count < 8:
-        #     count = count + 1
-        # else:
-        #     count = 1
-        #     binary = binary + ' '
-
-        if is_green(pix[i][j]):
-            pix[i][j] = [178,219,55,255]
+        if count < 8:
+            count = count + 1
         else:
-            pix[i][j] = [0,0,0,255]
+            count = 1
+            binary = binary + ' '
 
-
-im2 = Image.fromarray(pix)
-im2.save("result.png")
